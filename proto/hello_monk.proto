@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-
 message Monk {
   string name = 1;
   string message = 2;
@@ -8,12 +7,9 @@ message Monk {
 
 message UnaryRequest {}
 
-message StreamRequest {
-  int32 delay = 1;
-}
+message StreamRequest { int32 delay = 1; }
 
-
-service BeerTime {
+service HelloMonastery {
   rpc SayHelloMonk(UnaryRequest) returns (Monk);
 
   rpc SayHelloMonks(StreamRequest) returns (stream Monk);
