@@ -2840,13 +2840,6 @@ ts-node@^7.0.1:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-ts-protoc-gen@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/ts-protoc-gen/-/ts-protoc-gen-0.8.0.tgz#2a9a31ee8a4d4760c484f1d0c7199633afaa5e3e"
-  integrity sha512-LUFM4Jy3qMSVyRf5ql973cJjltS98MiCz8kPf1Rc9AC9BeLu0WJfoHLf0Tvx2cGH0jSK9BpA0o1tHQQfjeO47Q==
-  dependencies:
-    google-protobuf "^3.6.1"
-
 tslib@1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"

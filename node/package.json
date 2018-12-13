@@ -24,7 +24,6 @@
     "grpc_tools_node_protoc_ts": "^2.4.1",
     "prettier": "^1.15.3",
     "ts-node": "^7.0.1",
-    "ts-protoc-gen": "^0.8.0",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.17.0",
