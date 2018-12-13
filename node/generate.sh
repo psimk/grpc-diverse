@@ -1,12 +1,11 @@
 # #!/bin/sh
-PROTOC_PLUGIN_PATH="./server/node_modules/.bin/grpc_tools_node_protoc_plugin"
-PROTOC_PLUGIN_GRPC_TS_PATH="./server/node_modules/grpc_tools_node_protoc_ts/bin/protoc-gen-ts"
-PROTOC_PLUGIN_TS_PATH="./server/node_modules/.bin/protoc-gen-ts"
+PROTOC_PLUGIN_PATH="node_modules/.bin/grpc_tools_node_protoc_plugin"
+PROTOC_PLUGIN_GRPC_TS_PATH="node_modules/grpc_tools_node_protoc_ts/bin/protoc-gen-ts"
+PROTOC_PLUGIN_TS_PATH="node_modules/.bin/protoc-gen-ts"
 
 OUT_DIR="generated"
 
 rm -rf $OUT_DIR
-
 
 mkdir -p ${OUT_DIR}
 
