@@ -3,6 +3,7 @@ syntax = "proto3";
 message Monk {
   string name = 1;
   string message = 2;
+  int32 request_number = 3;
 }
 
 message UnaryRequest {}
