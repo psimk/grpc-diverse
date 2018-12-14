@@ -1,5 +1,5 @@
 import * as grpc from 'grpc';
-import { HelloMonasteryClient, UnaryRequest, StreamRequest, Monk } from './stubs';
+import { HelloMonasteryClient, Monk, StreamRequest, UnaryRequest } from './stubs';
 
 const port = '9099';
 const host = `0.0.0.0:${port}`;
