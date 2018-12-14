@@ -11,19 +11,19 @@ mkdir -p ${OUT_DIR}
 # Generate JS for protobuf
 protoc \
   --js_out="import_style=commonjs,binary:${OUT_DIR}" \
-  -I=../proto \
-  ../proto/*.proto
+  -I=../protos \
+  ../protos/*.proto
 
 # Generate JS GRPC Stubs
 protoc \
   --plugin="protoc-gen-grpc=${PROTOC_PLUGIN_PATH}" \
   --grpc_out="${OUT_DIR}" \
-  -I=../proto \
-  ../proto/*.proto
+  -I=../protos \
+  ../protos/*.proto
 
 # TS Type definitions for protobuf and GRPC stubs
 protoc \
   --plugin="protoc-gen-grpc=${PROTOC_PLUGIN_GRPC_TS_PATH}" \
   --grpc_out="${OUT_DIR}" \
-  -I=../proto \
-  ../proto/*.proto
+  -I=../protos \
+  ../protos/*.proto
