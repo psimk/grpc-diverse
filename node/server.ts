@@ -1,8 +1,6 @@
 import * as grpc from 'grpc';
 import { HelloMonasteryService, IHelloMonasteryServer, Monk } from './stubs';
 
-const server = new grpc.Server();
-
 const rpc: IHelloMonasteryServer = {
   sayHelloMonk: (_, send) => {
     const res = new Monk();
@@ -21,7 +19,7 @@ const rpc: IHelloMonasteryServer = {
     let requestNumber = 0;
 
     res.setName('Paul');
-    res.setMessage("Let's use gRPC!");
+    res.setMessage("Let's use gRPC on Node!");
 
     const writeHello = () => {
       requestNumber += 1;
@@ -39,12 +37,19 @@ const rpc: IHelloMonasteryServer = {
   },
 };
 
-server.addService(HelloMonasteryService, rpc);
+const createServer = (lifeTime: number, onShutDown = () => {}) => {
+  const port = '9099';
+  const host = `0.0.0.0:${port}`;
 
-const port = '9099';
-const host = `0.0.0.0:${port}`;
-server.bind(host, grpc.ServerCredentials.createInsecure());
+  const server = new grpc.Server();
 
-server.start();
+  server.addService(HelloMonasteryService, rpc);
+  server.bind(host, grpc.ServerCredentials.createInsecure());
 
-console.log(`Running on ${host}`);
+  server.start();
+  console.log(`Running on ${host}`);
+
+  setTimeout(() => server.tryShutdown(onShutDown), lifeTime * 1000);
+};
+
+createServer(60, () => console.log('Server has shut down..'));
